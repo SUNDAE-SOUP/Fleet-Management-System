@@ -1,0 +1,740 @@
+@import url("https://fonts.cdnfonts.com/css/inter");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.container-login {
+  height: 100vh;
+  background-color: #f5f5f7;
+}
+
+.bottombar {
+  position: absolute;
+  background: #005A9C;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  padding: 0 20px;
+  display: grid;
+  align-items: center;
+  z-index: 1;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerContainer {
+  top: 120px;
+  position: absolute;
+  display: flex;
+  gap: 50px;
+  transition: 0.5s;
+}
+
+.loginContainer,
+.signUpContainer {
+  width: 240px;
+}
+
+.login-boxHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #f5f5f7;
+  gap: 20px;
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo img {
+  width: 150px;
+  border-radius: 10px;
+}
+
+.login-logo p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f5f5f7;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 480px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #005A9C;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.checkbox input {
+  cursor: pointer;
+}
+
+.checkboxlabel {
+  color: #f5f5f7;
+}
+
+.checkbox a {
+  text-decoration: none;
+  color: #f5f5f7 !important;
+  cursor: pointer;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #f5f5f7;
+  border-bottom: 1px solid #f5f5f7 !important;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: #005A9C;
+  border-radius: 10px;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #f5f5f7;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -30px;
+  left: 0;
+  color: #00AEEF;
+  font-size: 14px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.button {
+  position: relative;
+  padding: 10px 10px;
+  width: 100%;
+  color: #00AEEF;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  background: linear-gradient(#141e30, #243b55);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #00AEEF;
+  color: #f5f5f7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00AEEF, 0 0 25px #00AEEF, 0 0 50px #00AEEF;
+}
+
+.topbar {
+  position: fixed;
+  background: #005A9C;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 125px 3fr 4fr 3fr 0.4fr;
+  align-items: center;
+  z-index: 1;
+}
+
+.topbar i {
+  color: #f5f5f7;
+}
+
+.logo h2 {
+  color: #f5f5f7;
+}
+
+.search4 {
+  position: relative;
+  width: 60%;
+  justify-self: center;
+}
+
+.search input {
+  width: 100%;
+  height: 40px;
+  padding: 0 40px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #f5f5f7;
+  color: #005A9C;
+}
+
+.search i {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #005A9C;
+  cursor: pointer;
+}
+
+.bell {
+  display: flex;
+  justify-self: center;
+}
+
+.user {
+  position: relative;
+  width: 150;
+  height: 60px;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+/* sidebar starts here */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  width: 260px;
+  height: calc(100% - 60px);
+  background-color: rgb(64, 156, 255);
+  overflow-x: hidden;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  width: 100%;
+  list-style: none;
+}
+
+.sidebar ul li:hover {
+  background: #f5f5f7;
+}
+
+.sidebar ul li:hover a {
+  color: #005A9C;
+}
+
+.sidebar ul .hover {
+  background: #f5f5f7;
+}
+
+.sidebar ul .hover a {
+  color: #005A9C;
+}
+
+.sidebar ul li a {
+  width: 100%;
+  text-decoration: none;
+  color: #f5f5f7;
+  height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li a i {
+  min-width: 60px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* main starts here */
+#dashboardSection,
+#forApprovalSection,
+#historySection,
+#carRepairHistorySection,
+#settingsSection,
+#helpSection {
+  position: absolute;
+  top: 60px;
+  width: calc(100% - 260px);
+  left: 260px;
+  min-height: calc(100vh - 60px);
+  background: #f5f5f7;
+  padding: 20px;
+}
+
+#forApprovalSection,
+#historySection,
+#carRepairHistorySection,
+#settingsSection,
+#helpSection {
+  display: none;
+}
+
+/* dashboard section starts here */
+.dropDownsHolderHolder {
+  width: calc(100% - 260px);
+  display: grid;
+  grid-template-columns: calc(70% - 20px) 20px 30%;
+  height: 50px;
+  padding-bottom: 20px;
+  position: fixed;
+  z-index: 1;
+}
+
+.dropDownsHolder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.dropDowns {
+  width: 100%;
+}
+
+.dropDowns select {
+  border: 1px solid #1d1d1f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #f5f5f7;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px;
+  font-weight: bold;
+  color: #1d1d1f;
+  width: 100%;
+  text-align: center;
+}
+
+.cards {
+  margin-top: 70px;
+  width: calc(100% - 260px);
+  display: grid;
+  grid-template-columns: calc(70% - 20px) 20px 30%;
+  height: 100px;
+  padding-bottom: 20px;
+  position: fixed;
+  z-index: 1;
+}
+
+.cardHolder1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.cardHolder2 {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.cards .card {
+  padding: 10px;
+  min-width: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f7;
+  border-radius: 10px;
+  border: 1px solid #1d1d1f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cards .card:hover {
+  background: #00AEEF;
+}
+
+.cards .card .hover {
+  background: #00AEEF;
+}
+
+.cards .card:hover .number,
+.cards .card:hover .card-name,
+.cards .card:hover .icon-box i {
+  color: #f5f5f7;
+}
+
+.number {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1d1d1f;
+  text-align: center;
+}
+
+.card-name {
+  color: #005A9C;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.icon-box i {
+  font-size: 30px;
+  color: #005A9C;
+}
+
+/* charts starts here */
+.charts {
+  display: grid;
+  grid-template-columns: calc(70% - 20px) 30%;
+  grid-gap: 20px;
+  width: 100%;
+  padding-top: 0;
+  margin-top: 250px;
+  overflow: hidden;
+}
+
+.chart1, .chart2 {
+  background: #f5f5f7;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #1d1d1f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: calc(100vh - 350px);
+}
+
+.chart2 {
+  position: relative;
+}
+
+.chart h2 {
+  color: #1d1d1f;
+}
+
+#pieChart {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tat {
+  position: absolute;
+  top: 180px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.forApprovalInput {
+  width: calc(100% - 260px);
+  display: grid;
+  grid-template-columns: calc(70% - 20px) 20px 30%;
+  height: 70px;
+  padding-bottom: 20px;
+  position: fixed;
+  z-index: 1;
+}
+
+.forApprovalInputHolder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.forApprovalInputHolder input {
+  padding: 10px 20px;
+  min-width: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f7;
+  border-radius: 10px;
+  border: 1px solid #1d1d1f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.forApprovalContainer {
+  margin-top: 70px;
+  width: 100%;
+}
+
+.forApprovalHeader {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(6, 1fr) 0.5fr repeat(2, 1fr) 0.75fr;
+  color: #636366;
+  border-bottom: 3px solid #005A9C;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.forApprovalData {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(6, 1fr) 0.5fr repeat(2, 1fr) 0.75fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin-top: 10px;
+}
+
+.approvalData {
+  width: 100%;
+  height: 100%;
+  grid-column: span 10;
+  display: grid;
+  grid-template-columns: 0.5fr repeat(6, 1fr) 0.5fr repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.approvalResponse {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.approvalResponse button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.approvalResponse i {
+  font-size: 20px;
+  color: white;
+}
+
+.approved {
+  background-color: green;
+}
+
+.disapproved {
+  background-color: red;
+}
+
+.forApprovalHeaderData {
+  display: none;
+  color: #636366;
+}
+
+.historyInput {
+  width: calc(100% - 260px);
+  display: grid;
+  grid-template-columns: calc(70% - 20px) 20px 30%;
+  height: 70px;
+  padding-bottom: 20px;
+  position: fixed;
+  z-index: 1;
+}
+
+.historyInputHolder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.historyInputHolder select {
+  padding: 10px 20px;
+  min-width: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f7;
+  border-radius: 10px;
+  border: 1px solid #1d1d1f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.headerBorder {
+  width: 100%;
+  margin-top: 108px;
+  border-bottom: 3px solid #005A9C;
+}
+
+/* Responsive starts here */
+@media (max-width: 1450px) {
+  .number {
+    font-size: 21px;
+  }
+  .card-name {
+    font-size: 11px;
+  }
+  .cards .card {
+    min-width: 150px;
+  }
+}
+@media (max-width: 1115px) {
+  .sidebar {
+    width: 60px;
+  }
+  #dashboardSection,
+  #forApprovalSection,
+  #historySection,
+  #carRepairHistorySection,
+  #settingsSection,
+  #helpSection {
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 60px);
+    left: 60px;
+    min-height: calc(100vh - 60px);
+  }
+  .main {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  .cards {
+    width: calc(100% - 60px);
+  }
+  .card .card-name {
+    font-size: 16px;
+  }
+  .card .number {
+    font-size: 16px;
+  }
+  .card .number {
+    font-size: 16px;
+  }
+  .dropDowns select {
+    font-size: 30px;
+  }
+}
+@media (max-width: 880px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .topbar {
+    grid-template-columns: 125px 5fr 0.4fr;
+  }
+  .logo h2 {
+    font-size: 20px;
+  }
+  .search {
+    width: 80%;
+  }
+  .search input {
+    padding: 0 20px;
+  }
+  .topbar i {
+    margin-right: 5px;
+  }
+  .dropDownsHolderHolder,
+  .dropDownsHolder,
+  .cards,
+  .cardHolder1,
+  .cardHolder2 {
+    width: 100%;
+    grid-template-columns: 1fr;
+    position: static;
+  }
+  .charts {
+    width: 100%;
+    margin-top: 250px;
+  }
+  .chart1,
+  .chart2 {
+    margin-top: 20px;
+  }
+  .Tat {
+    top: 150px;
+  }
+  .forApprovalHeader {
+    display: none;
+  }
+  .forApprovalData {
+    grid-template-columns: 1fr;
+  }
+  .approvalData {
+    grid-column: span 1;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .forApprovalHeaderData {
+    display: block;
+  }
+  .approvalResponse {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}/*# sourceMappingURL=main.css.map */
