@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{asset ('resources/css/style.css') }}">
-    <!-- flowbite -->
+    <title>Signup</title>
+
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <!-- flowbite -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -17,7 +18,7 @@
         <div class="login-form">
             <form>
 
-            <img src="logo.png" class="logo" alt="Company Logo" />
+            <img src="{{ asset('images/logo.png') }}" class="logo" alt="Company Logo" />
 
             <div class="mb-6">
                 <label for="email" class="block mb-2 text-sm font-medium text-white dark:text-white">Employee ID:</label>

@@ -5,15 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD</title>
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="main-css/main.css">
+
+    <!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
+    <link rel="stylesheet" href="{{asset ('images/favicon.png') }}">
+
+    <!-- <link rel="stylesheet" href="main-css/main.css"> -->
+    <link rel="stylesheet" href="{{asset ('css/style.css') }}">
+    <link rel="stylesheet" href="{{asset ('css/main.css') }}">
+    <link rel="stylesheet" href="{{asset ('scss/main.scss') }}">
+    <link rel="stylesheet" href="{{asset ('scss/_mixins.scss') }}">
+    <link rel="stylesheet" href="{{asset ('scss/_variable.scss') }}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+   
+
 </head>
 <body>
     <div class="container">
         <div class="topbar">
             <div class="user">
-              <img src="images/logo.png" alt="">
+              <img src="{{ asset('images/favicon.png') }}" alt="company">
             </div>
             <div></div>
             <div class="search">
@@ -307,10 +319,23 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.1/apexcharts.min.js"></script>
-    <script src="/"></script>
-    <script src="charts/chart1a.js"></script>
-    <script src="charts/chart1b.js"></script>
-    <script src="charts/chart2.js"></script>
-    <script src="main.js"></script>
+
+    <script src="{{ asset('js/chart1.js') }}"></script>
+    <!-- <script src="charts/chart1a.js"></script> -->
+    <script src="{{ asset('js/chart1a.js') }}"></script>
+    
+    <!-- <script src="charts/chart1b.js"></script> -->
+    <script src="{{ asset('js/chart1b.js') }}"></script>
+    
+    <!-- <script src="charts/chart2.js"></script> -->
+    <script src="{{ asset('js/chart2.js') }}"></script>
+
+    <!-- <script src="main.js"></script> -->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+    <script src="{{ asset('js/bootsrap.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+
 </body>
 </html>

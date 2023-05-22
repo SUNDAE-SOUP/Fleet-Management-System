@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TestingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(TestingController::class) -> group (function() {
+
+    Route::get('/testing', 'testing');
+
+  
+
+    //if will not use the group::controller itshould be like below
+    // Route::delete('/users/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id');
+
+
 });
