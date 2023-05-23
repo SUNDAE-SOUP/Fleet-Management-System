@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
             $table->string('plate_no')->nullable()->unique();
+            $table->string('cs_no')->nullable()->unique();
             $table->string('year_model')->nullable();
             $table->foreignId('model_id')->nullable()->constrained();
+            $table->foreignId('car_status_id')->nullable()->constrained();
             $table->string('engine_no')->nullable();
             $table->string('chassis_no')->nullable();
+            $table->string('color')->nullable();
+            $table->string('financing')->nullable();
+            $table->year('acquisition_year')->nullable();
             $table->date('date_acquired')->nullable();
             $table->date('date_due')->nullable();
             $table->date('lto_renewal_date')->nullable();

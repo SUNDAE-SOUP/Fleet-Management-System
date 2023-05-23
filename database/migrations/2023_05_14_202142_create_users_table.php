@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('employee-code')->nullable();
             $table->string('name')->nullable();
-            $table->foreignId('vehicle_id')->nullable()->constrained();
             $table->foreignId('role_id')->nullable()->constrained();
             $table->string('email')->nullable()->unique();
             $table->string('password')->nullable();

@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('car_expenses', function (Blueprint $table) {
-            $table->foreignId('vehicle_id')->nullable()->constrained();
-            $table->foreignId('request_history_id')->nullable()->constrained();
-            $table->string('total_expenses')->nullable();
+        Schema::create('secondary_corrective_categories', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('primary_corrective_category_id');
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_expenses');
+        Schema::dropIfExists('secondary_corrective_categories');
     }
 };

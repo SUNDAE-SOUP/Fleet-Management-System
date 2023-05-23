@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('request_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained();
+            $table->foreignId('user_assigned_vehicle_id')->nullable()->constrained();
             $table->string('particulars')->nullable();
             $table->foreignId('mode_of_transaction_id')->nullable()->constrained();
             $table->foreignId('type_of_request_id')->nullable()->constrained();
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->date('date_of_evaluation')->nullable();
             $table->date('date_of_approval')->nullable();
             $table->string('po_number')->nullable();
-            $table->string('po_date')->nullable();
+            $table->date('po_date')->nullable();
             $table->string('po_copy')->nullable();
         });
     }
