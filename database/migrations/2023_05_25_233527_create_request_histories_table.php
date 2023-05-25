@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('request_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_assigned_vehicle_id')->nullable()->constrained();
+            $table->foreignId('request_particular_id')->nullable()->constrained();
             $table->string('particulars')->nullable();
-            $table->foreignId('mode_of_transaction_id')->nullable()->constrained();
-            $table->foreignId('type_of_request_id')->nullable()->constrained();
+            $table->string('comment')->nullable();
             $table->decimal('quotation_amount', $precision = 8, $scale = 2)->nullable();
             $table->decimal('fleet_nego_amount', $precision = 8, $scale = 2)->nullable();
             $table->string('shop_name')->nullable();
@@ -29,6 +29,11 @@ return new class extends Migration
             $table->string('po_number')->nullable();
             $table->date('po_date')->nullable();
             $table->string('po_copy')->nullable();
+            $table->string('file_attachment_1')->nullable();
+            $table->string('file_attachment_2')->nullable();
+            $table->string('file_attachment_3')->nullable();
+            $table->string('file_attachment_4')->nullable();
+            $table->string('file_attachment_5')->nullable();
         });
     }
 

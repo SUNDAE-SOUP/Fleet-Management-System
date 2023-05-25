@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('secondary_corrective_categories', function (Blueprint $table) {
+        Schema::create('3rd_request_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('primary_corrective_category_id');
+            $table->string('name');
+            $table->foreignId('type_of_request_id')->nullable()->constrained();
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('secondary_corrective_categories');
+        Schema::dropIfExists('3rd_request_categories');
     }
 };
