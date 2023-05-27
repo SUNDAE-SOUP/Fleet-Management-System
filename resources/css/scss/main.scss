@@ -30,12 +30,14 @@
     z-index: 1;
 }
 
-.login-box{
+.login-box
+{
     display: flex;
     flex-direction: column;
 }
 
-.containerContainer{
+.containerContainer
+{
     top: 120px;
     position: absolute;
     display: flex;
@@ -43,13 +45,14 @@
     transition: .5s;
 }
 
-
 .loginContainer,
-.signUpContainer{
+.signUpContainer
+{
     width: 240px;
 }
 
-.login-boxHeader{
+.login-boxHeader
+{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +60,6 @@
     color: variables.$white;
     gap: 20px;
 }
-
-
 
 .login-logo
 {
@@ -109,7 +110,8 @@
     cursor: pointer;
 }
 
-.checkboxlabel{
+.checkboxlabel
+{
     color: variables.$white;
 }
 
@@ -337,7 +339,9 @@
 #historySection,
 #carRepairHistorySection,
 #settingsSection,
-#helpSection
+#helpSection,
+#userDashboardSection,
+#userSendRequest
 {
     position: absolute;
     top: 60px;
@@ -352,7 +356,8 @@
 #historySection,
 #carRepairHistorySection,
 #settingsSection,
-#helpSection
+#helpSection,
+#userDashboardSection
 {
     display: none;
 }
@@ -382,6 +387,7 @@
 {
     width: 100%;
 }
+
 .dropDowns select
 {
     border: 1px solid variables.$black;
@@ -453,31 +459,36 @@
 
 .cards .card:hover .number, 
 .cards .card:hover .card-name,
-.cards .card:hover .icon-box i{
+.cards .card:hover .icon-box i
+{
     color: variables.$white;
 }
 
-.number{
+.number
+{
     font-size: 26px;
     font-weight: bold;
     color: variables.$black;
     text-align: center;
 }
 
-.card-name{
+.card-name
+{
     color: variables.$primary_color;
     font-weight: 600;
     font-size: 16px;
     text-align: center;
 }
 
-.icon-box i{
+.icon-box i
+{
     font-size: 30px;
     color: variables.$primary_color;
 }
 
 /* charts starts here */
-.charts{
+.charts
+{
     display: grid;
     grid-template-columns: calc(70% - 20px) 30%;
     grid-gap: 20px;
@@ -487,7 +498,8 @@
     overflow: hidden;
 }
 
-.chart1, .chart2{
+.chart1, .chart2
+{
     background: variables.$white;
     padding: 20px;
     border-radius: 10px;
@@ -497,22 +509,26 @@
     height: calc(100vh - 350px);
 }
 
-.chart2{
+.chart2
+{
     position: relative;
 }
 
-.chart h2{
+.chart h2
+{
     color: #1d1d1f;
 }
 
-#pieChart{
+#pieChart
+{
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Tat{
+.Tat
+{
     position: absolute;
     top: 180px;
     width: calc(100% - 40px);
@@ -523,7 +539,8 @@
 }
 
 // For Approval Section
-.forApprovalInput{
+.forApprovalInput
+{
     width: calc(100% - 260px);
     display: grid;
     grid-template-columns: calc(70% - 20px) 20px 30%;
@@ -533,14 +550,16 @@
     z-index: 1;
 }
 
-.forApprovalInputHolder{
+.forApprovalInputHolder
+{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     width: 100%;
 }
 
-.forApprovalInputHolder input{
+.forApprovalInputHolder input
+{
     padding: 10px 20px;
     min-width: 250px;
     width: 100%;
@@ -555,12 +574,14 @@
     text-transform: uppercase;
 }
 
-.forApprovalContainer{
+.forApprovalContainer
+{
     margin-top: 70px;
     width: 100%;
 }
 
-.forApprovalHeader{
+.forApprovalHeader
+{
     display: grid;
     grid-template-columns: .5fr repeat(6, 1fr) .5fr repeat(2, 1fr) .75fr;
     color: variables.$gray;
@@ -571,7 +592,8 @@
     gap: 10px;
 }
 
-.forApprovalData{
+.forApprovalData
+{
     display: grid;
     grid-template-columns: .5fr repeat(6, 1fr) .5fr repeat(2, 1fr) .75fr;
     justify-content: center;
@@ -581,7 +603,8 @@
     margin-top: 10px;
 }
 
-.approvalData{
+.approvalData
+{
     width: 100%;
     height: 100%;
     grid-column: span 10;
@@ -596,7 +619,8 @@
     border-radius: 10px;
 }
 
-.approvalResponse{
+.approvalResponse
+{
     width: 100%;
     height: 100%;
     display: flex;
@@ -609,7 +633,8 @@
     padding: 10px;
 }
 
-.approvalResponse button{
+.approvalResponse button
+{
     height: 40px;
     width: 40px;
     border-radius: 50px;
@@ -621,26 +646,31 @@
     text-align: center;
 }
 
-.approvalResponse i{
+.approvalResponse i
+{
     font-size: 20px;
     color: white;
 }
 
-.approved{
+.approved
+{
     background-color: green;
 }
 
-.disapproved{
+.disapproved
+{
     background-color: red;
 }
 
-.forApprovalHeaderData{
+.forApprovalHeaderData
+{
     display: none;
     color: variables.$gray;
 }
 
 // History Section
-.historyInput{
+.historyInput
+{
     width: calc(100% - 260px);
     display: grid;
     grid-template-columns: calc(70% - 20px) 20px 30%;
@@ -650,14 +680,16 @@
     z-index: 1;
 }
 
-.historyInputHolder{
+.historyInputHolder
+{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     width: 100%;
 }
 
-.historyInputHolder select{
+.historyInputHolder select
+{
     padding: 10px 20px;
     min-width: 250px;
     width: 100%;
@@ -672,15 +704,145 @@
     text-transform: uppercase;
 }
 
-.headerBorder{
+.headerBorder
+{
     width: 100%;
     margin-top: 108px;
     border-bottom: 3px solid variables.$primary_color;
 }
 
+// User Account
+// Dashboard Section
+#userDashboardSection h1
+{
+    font-size: 30px;
+    color: variables.$black;
+}
+
+#userDashboardSection .carDetails
+{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr;
+    margin-bottom: 10px;
+}
+
+#userDashboardSection .otherDetails
+{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+#userDashboardSection .otherDetailsHeader
+{
+    display: flex;
+}
+
+#userDashboardSection .otherDetails .request
+{
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid variables.$black;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#userDashboardSection .otherDetails .request .requestHeader
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
+}
+
+#userDashboardSection .otherDetails .request .progressBarHeader
+{
+    text-align: center;
+    font-weight: bold;
+    color: variables.$primary_color;
+    margin: 5px 0;
+}
+
+#userDashboardSection .otherDetails .request .progressDetails
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+#userDashboardSection .label
+{
+    color: variables.$gray;
+}
+
+// Send Request Section
+#userSendRequest .sendRequest 
+{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+#userSendRequest .sendRequest .sendRequestHeader
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr;
+}
+
+#userSendRequest .sendRequest form .formDropDown
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#userSendRequest .sendRequest form .formInput
+{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#userSendRequest .sendRequest form .input
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#userSendRequest .sendRequest form .input label
+{
+    font-weight: bold;
+    color: variables.$gray;
+}
+
+#userSendRequest .sendRequest form .input select,
+#userSendRequest .sendRequest form .input input
+{
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: variables.$white
+}
+
+#userSendRequest .label
+{
+    color: variables.$gray;
+}
 
 /* Responsive starts here */
-@media (max-width:1450px){
+@media (max-width:1450px)
+{
     .number{
         font-size: 21px;
     }
@@ -694,7 +856,8 @@
     }
 }
 
-@media (max-width:1115px){
+@media (max-width:1115px)
+{
     .sidebar{
         width: 60px;
     }
@@ -733,7 +896,8 @@
     }
 }
 
-@media (max-width:880px){
+@media (max-width:880px)
+{
     .cards{
         grid-template-columns: repeat(1, 1fr);
     }
@@ -742,7 +906,8 @@
     }
 }
 
-@media (max-width:500px){
+@media (max-width:500px)
+{
     .topbar{
         grid-template-columns: 125px 5fr 0.4fr;
     }

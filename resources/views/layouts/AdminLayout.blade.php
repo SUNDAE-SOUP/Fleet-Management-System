@@ -1,15 +1,15 @@
-<x-user.user-header />
-        <x-user.user-sidebar />
+<x-admin.admin-header />
+        <x-admin.admin-sidebar />
         <div class="main">
             <!-- dashboard -->
-            <x-user.section.user-dashboard />
+            <x-admin.section.admin-dashboard />
             <!-- for approval -->
-            <x-user.section.user-send-request />
+            <x-admin.section.admin-for-approval />
             <!-- history -->
-            <x-user.section.user-history />
+            <x-admin.section.admin-history />
             <!-- car repair history -->
             <section id="carRepairHistorySection">
-            <x-user.section.user-car-repair-history />
+
             </section>
             <!-- settings -->
             <section id="settingsSection">
@@ -21,5 +21,5 @@
             </section>
         </div>
     </div>
-<x-user.user-footer />
+<x-admin.admin-footer />
 
