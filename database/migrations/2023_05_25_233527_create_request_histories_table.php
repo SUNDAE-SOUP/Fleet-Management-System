@@ -34,10 +34,10 @@ return new class extends Migration
             $table->string('file_attachment_3')->nullable();
             $table->string('file_attachment_4')->nullable();
             $table->string('file_attachment_5')->nullable();
-            $table->string('invoice/or_number')->nullable();
-            $table->date('invoice/or_date')->nullable();
-            $table->decimal('invoice/or_amount', $precision = 8, $scale = 2)->nullable();
-            $table->string('invoice/or_file_attachment_6')->nullable();
+            $table->string('invoice_or_number')->nullable();
+            $table->date('invoice_or_date')->nullable();
+            $table->decimal('invoice_or_amount', $precision = 8, $scale = 2)->nullable();
+            $table->string('invoice_or_file_attachment_6')->nullable();
         });
     }
 
