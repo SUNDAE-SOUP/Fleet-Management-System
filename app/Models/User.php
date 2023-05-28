@@ -43,5 +43,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+    public function requestHistories(): HasMany
+    {
+        return $this->hasMany(Request_History::class);
+    }
+
+    public function vehicle(): HasOne
+    {
+        return $this->hasOne(Vehicle::class);
+    }
+
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function buDept(): BelongsTo
+    {
+        return $this->belongsTo(BU_Dept::class);
+    }    
 }
