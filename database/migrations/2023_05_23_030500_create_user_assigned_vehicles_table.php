@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained();
             $table->foreignId('vehicle_id')->nullable()->constrained();
             $table->foreignId('assignment_status_id')->nullable()->constrained();
-            $table->date('date_assigned');
-            $table->date('date_returned');
+            $table->date('date_assigned')->nullable();
+            $table->date('date_returned')->nullable();
             $table->timestamps();
         });
     }

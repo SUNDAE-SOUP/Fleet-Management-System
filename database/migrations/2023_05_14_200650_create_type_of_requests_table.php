@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('type_of_requests', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->foreignId('mode_of_transaction_id')->nullable()->constrained();
         });
     }
 
