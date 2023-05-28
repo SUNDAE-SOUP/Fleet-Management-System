@@ -28,3 +28,12 @@ Route::controller(TestingController::class) -> group (function() {
 
 
 });
+
+
+//routes for the user 
+Route::controller(UserController::class)->group(function () {
+
+    Route::get('/user/{user:email}/edit', 'edit');
+ 
+    Route::put('/user/{user}/update', 'update');
+ });
