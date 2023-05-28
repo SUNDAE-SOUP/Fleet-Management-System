@@ -1,6 +1,6 @@
 <x-user.user-header />
     <x-user.user-sidebar />
-    <section id="userHistory">
+    <section id="userSettingsSection">
 
     </section>
 <x-user.user-footer />

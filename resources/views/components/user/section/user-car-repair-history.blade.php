@@ -1,3 +1,6 @@
-<div>
-    <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
-</div>
+<x-user.user-header />
+    <x-user.user-sidebar />
+    <section id="userCarRepairHistorySection">
+
+    </section>
+<x-user.user-footer />
