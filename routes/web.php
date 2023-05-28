@@ -42,7 +42,7 @@ Route::controller(UserController::class)->group(function () {
 
 Route::get('/dashboard', function () {
     // return view('dashboard');
-    return view('logintesting');
+    return view('layouts/AdminLayout');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
