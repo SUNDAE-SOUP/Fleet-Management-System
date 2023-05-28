@@ -20,7 +20,7 @@ class TestingController extends Controller
 
     public function testing()
     {
-        return view('AdminLayout');
+        return view('testingsignup');
     }
 
     /**
