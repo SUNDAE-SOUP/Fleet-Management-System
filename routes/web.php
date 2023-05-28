@@ -2,7 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestingController;
-
+use App\Http\Controllers\User\UserDashboardController;
+use App\Http\Controllers\User\UserSendRequestController;
+use App\Http\Controllers\User\UserHistoryController;
+use App\Http\Controllers\User\UserCarRepairHistoryController;
+use App\Http\Controllers\User\UserSettingsController;
+use App\Http\Controllers\User\UserHelpController;
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminForApprovalController;
+use App\Http\Controllers\Admin\AdminHistoryController;
+use App\Http\Controllers\Admin\AdminCarRepairHistoryController;
+use App\Http\Controllers\Admin\AdminSettingsController;
+use App\Http\Controllers\Admin\AdminHelpController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,64 +26,58 @@ use App\Http\Controllers\TestingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
+
 //routes for the admin 
-Route::get('/admin/dashboard', function () {
-    return view('components/admin/section/admin-dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
+    Route::get('/admin/dashboard', "index");
+});
 
-Route::get('/admin/for-approval', function () {
-    return view('components/admin/section/admin-for-approval');
-})->middleware(['auth'])->name('for-approval');
+Route::middleware(['auth'])->controller(AdminForApprovalController::class)->group(function () {
+    Route::get('/admin/for-approval', "index");
+});
 
-Route::get('/admin/history', function () {
-    return view('components/admin/section/admin-history');
-})->middleware(['auth'])->name('history');
+Route::middleware(['auth'])->controller(AdminHistoryController::class)->group(function () {
+    Route::get('/admin/history', "index");
+});
 
-Route::get('/admin/car-repair-history', function () {
-    return view('components/admin/section/admin-car-repair-history');
-})->middleware(['auth'])->name('car-repair-history');
+Route::middleware(['auth'])->controller(AdminCarRepairHistoryController::class)->group(function () {
+    Route::get('/admin/car-repair-history', "index");
+});
 
-Route::get('/admin/settings', function () {
-    return view('components/admin/section/admin-settings');
-})->middleware(['auth'])->name('settings');
+Route::middleware(['auth'])->controller(AdminSettingsController::class)->group(function () {
+    Route::get('/admin/settings', "index");
+});
 
-Route::get('/admin/help', function () {
-    return view('components/admin/section/admin-help');
-})->middleware(['auth'])->name('help');
-
+Route::middleware(['auth'])->controller(AdminHelpController::class)->group(function () {
+    Route::get('/admin/help', "index");
+});
 
 //routes for the user
-Route::get('/user/dashboard', function () {
-    // return view('dashboard');
-    return view('components/user/section/user-dashboard');
-})->middleware(['auth'])->name('user-dashboard');
+Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
+    Route::get('/user/dashboard', "index");
+});
 
-Route::get('/user/send-request', function () {
-    // return view('dashboard');
-    return view('components/user/section/user-send-request');
-})->middleware(['auth'])->name('user-send-request');
+Route::middleware(['auth'])->controller(UserSendRequestController::class)->group(function () {
+    Route::get('/user/send-request', "index");
+});
 
-Route::get('/user/history', function () {
-    // return view('dashboard');
-    return view('components/user/section/user-history');
-})->middleware(['auth'])->name('user-history');
+Route::middleware(['auth'])->controller(UserHistoryController::class)->group(function () {
+    Route::get('/user/history', "index");
+});
 
-Route::get('/user/car-repair-history', function () {
-    // return view('dashboard');
-    return view('components/user/section/user-car-repair-history');
-})->middleware(['auth'])->name('user-car-repair-history');
+Route::middleware(['auth'])->controller(UserCarRepairHistoryController::class)->group(function () {
+    Route::get('/user/car-repair-history', "index");
+});
 
-Route::get('/user/settings', function () {
-    // return view('dashboard');
-    return view('components/user/section/user-settings');
-})->middleware(['auth'])->name('user-settings');
+Route::middleware(['auth'])->controller(UserSettingsController::class)->group(function () {
+    Route::get('/user/settings', "index");
+});
 
-Route::get('/user/help', function () {
-    // return view('dashboard');
-    return view('components/user/section/user-help');
-})->middleware(['auth'])->name('user-help');
+Route::middleware(['auth'])->controller(UserHelpController::class)->group(function () {
+    Route::get('/user/help', "index");
+});
 
 require __DIR__.'/auth.php';

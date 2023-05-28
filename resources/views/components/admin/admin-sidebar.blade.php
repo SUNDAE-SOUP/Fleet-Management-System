@@ -20,26 +20,26 @@
         </li>
         <li>
             <a href="/admin/car-repair-history" style="font-size: 16px;">
-                <i class="fa-solid fa-car-burst"></i>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
                 CAR-REPAIR HISTORY
             </a>
         </li>
         <li>
             <a href="/admin/settings">
                 <i class="fas fa-cog"></i>
-                Settings
+                SETTINGS
             </a>
         </li>
         <li>
             <a href="/admin/help">
                 <i class="fas fa-question"></i>
-                Help
+                HELP
             </a>
         </li>
         <li>
-            <a href="/">
+            <a href="/logout">
                 <i class="fa-solid fa-power-off"></i>
-                Logout
+                LOGOUT
             </a>
         </li>
     </ul>
