@@ -10,5 +10,6 @@
 
     <script src="{{ asset('js/bootsrap.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
     </body>
 </html>
