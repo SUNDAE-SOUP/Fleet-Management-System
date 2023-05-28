@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestingController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,18 @@ Route::get('/admin', function () {
 Route::get('/user', function () {
     return view('layouts/UserLayout');
 });
+
+Route::controller(UserController::class)->group(function () {
+
+    Route::get('/user/{user:email}/edit', 'edit');
+ 
+    Route::put('/user/{user}/update', 'update');
+});
+
+
+Route::get('/dashboard', function () {
+    // return view('dashboard');
+    return view('logintesting');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

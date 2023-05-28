@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('employee-code')->nullable();
+            $table->string('employee_code')->nullable();
             $table->string('name')->nullable();
             $table->foreignId('role_id')->nullable()->constrained();
             $table->string('email')->nullable()->unique();
@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('dl_no')->nullable();
             $table->date('dl_issued_date')->nullable();
             $table->string('dl_copy')->nullable();
+            $table->string('updated_at')->nullable();
+            $table->string('created_at')->nullable();
         });
     }
 
