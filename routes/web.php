@@ -14,26 +14,15 @@ use App\Http\Controllers\TestingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-Route::controller(TestingController::class) -> group (function() {
-
-    Route::get('/testing', 'testing');
-
-  
-
-    //if will not use the group::controller itshould be like below
-    // Route::delete('/users/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id');
-
-
+//routes for the admin 
+Route::get('/admin', function () {
+    return view('layouts/AdminLayout');
 });
-
 
 //routes for the user 
-Route::controller(UserController::class)->group(function () {
-
-    Route::get('/user/{user:email}/edit', 'edit');
- 
-    Route::put('/user/{user}/update', 'update');
- });
+Route::get('/user', function () {
+    return view('layouts/UserLayout');
+});
