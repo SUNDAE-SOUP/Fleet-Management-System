@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AdminHistoryController;
 use App\Http\Controllers\Admin\AdminCarRepairHistoryController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminHelpController;
+use App\Http\Controllers\Admin\VehicleMasterlistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +55,16 @@ Route::middleware(['auth'])->controller(AdminSettingsController::class)->group(f
 Route::middleware(['auth'])->controller(AdminHelpController::class)->group(function () {
     Route::get('/admin/help', "index");
 });
+
+
+//for VEHICLE MASTER LIST
+Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(function () {
+    Route::get('/admin/vehicle-masterlist', 'index');
+
+});
+
+
+
 
 //routes for the user
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
