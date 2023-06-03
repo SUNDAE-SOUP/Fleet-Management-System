@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mode_Of_Payment extends Model
+class Fourth_Request_Category extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,9 @@ class Mode_Of_Payment extends Model
         return $this->hasMany(RequestParticular::class);
     }
 
-    public function typeOfRequests(): HasMany
+    public function thirdRequestCategory(): BelongsTo
     {
-        return $this->hasMany(Type_Of_Request::class);
+        return $this->belongsTo(Third_Request_Category::class, '3rd_request_category_id');
     }
+
 }

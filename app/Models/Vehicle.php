@@ -9,8 +9,19 @@ class Vehicle extends Model
 {
     use HasFactory;
 
-    public function user(): BelongsTo
+    public function userAssignedVehicles(): HasMany
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(UserAssignedVehicle::class);
     }
+
+    public function carModel(): BelongsTo
+    {
+        return $this->belongsTo(Car_Model::class, 'model_id');
+    }
+
+    public function carStatus(): BelongsTo
+    {
+        return $this->belongsTo(Car_Status::class, 'car_status_id');
+    }
+    
 }
