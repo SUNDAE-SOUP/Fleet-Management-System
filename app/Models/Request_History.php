@@ -9,6 +9,8 @@ class Request_History extends Model
 {
     use HasFactory;
 
+    protected $table = 'request_histories';
+
     public function userAssignedVehicle(): BelongsTo
     {
         return $this->belongsTo(UserAssignedVehicle::class, 'user_assigned_vehicle_id');
