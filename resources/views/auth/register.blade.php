@@ -12,13 +12,6 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
-            <div class="mt-4">
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text"  name="name" :value="old('name')" required />
-            </div>
-
             
             <!-- Employee id -->
             <div class="mt-4">
