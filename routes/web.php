@@ -66,6 +66,8 @@ Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(fu
 
 
 
+
+
 //routes for the user
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
     Route::get('/user/dashboard', "index");
