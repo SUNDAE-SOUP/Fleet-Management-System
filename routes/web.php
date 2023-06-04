@@ -35,8 +35,8 @@ Route::get('/', function () {
 //routes for the admin 
 
 //check UserDashboardController and RedirectifAuthenticated
-Route::get('/admin/view', [AdminDashboardController::class, 'index'])->name('admin.view');
-Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
+// Route::get('/admin/view', [AdminDashboardController::class, 'index'])->name('admin.view');
+Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
     Route::get('/admin/view','index')->name('admin.view');
 });
 
