@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Car_Model extends Model
 {
     use HasFactory;
+    protected $table = "models";
 
     public function carBrand(): BelongsTo
     {
