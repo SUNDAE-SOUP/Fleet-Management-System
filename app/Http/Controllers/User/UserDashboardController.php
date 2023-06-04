@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\UserAssignedVehicle;
+use App\Models\Request_History;
 
 use App\Models\Vehicle;
 use App\Models\Car_Model;
