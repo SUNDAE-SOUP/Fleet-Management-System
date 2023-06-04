@@ -38,6 +38,7 @@ Route::get('/', function () {
 // Route::get('/admin/view', [AdminDashboardController::class, 'index'])->name('admin.view');
 Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
     Route::get('/admin/view','index')->name('admin.view');
+    
 });
 
 
@@ -86,11 +87,12 @@ Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(fu
 
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
     Route::get('/user/view','index')->name('user.view');
+    
 });
 
 Route::middleware(['auth'])->controller(UserSendRequestController::class)->group(function () {
     Route::get('/user/send-request', "index");
-    Route::get('/user/send-request/submit', "submit");
+    Route::post('/user/send-request/submit', "submit");
 });
 
 

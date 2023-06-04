@@ -21,7 +21,8 @@
                 <div>{{$data2}}</div>
                 @endforeach
             </div><br><br>
-            <form method="POST" action="">
+            <form method="POST" action="/user/send-request/submit">
+                @csrf
                 <div class="formDropDown">
                     <input type="hidden" name="name" value="Rhejoel Joson">
                     <input type="hidden" name="plate#" value="NCI4421">
@@ -31,33 +32,37 @@
                     <input type="hidden" name="makeModel" value="TOYOTA VIOS 1.3J">
                     <div class="input">
                         <label for="modeTransact">Mode of Transaction</label>
-                        <select name="modeTransact" id="">
+                        <select name="modeTransact" id="modeTransact">
+                        <option > Choose Here</option>
                         @foreach ($modeTransact as $modeTransact)
-                            <option value="{{$modeTransact->id}}">{{$modeTransact->name}}</option>
+                            <option  value="{{$modeTransact->id}}"> {{$modeTransact->name}}</option>
                         @endforeach
                         </select>
                     </div>
                     <div class="input">
                         <label for="2ndCategory">Type of Request</label>
-                        <select name="2ndCategoryOR" id="">
+                        <select name="2ndCategory" id="2ndCategory">
+                        <option > Choose Here</option>
                         @foreach ($typeRequest as $typeRequest)
-                            <option value="">{{$typeRequest->name}}</option>
+                            <option value="{{$typeRequest->mode_of_transaction_id}}">{{$typeRequest->name}}</option>
                         @endforeach
                         </select>
                     </div>
                     <div class="input">
                         <label for="3rdCategory">Type of Corrective</label>
-                        <select name="3rdCategory" id="">
+                        <select name="3rdCategory" id="3rdCategory">
+                        <option > Choose Here</option>
                             @foreach ($typeCorrective as $typeCorrective)
-                            <option value="">{{$typeCorrective->name}}</option>
+                            <option value="{{$typeCorrective->type_of_request_id}}">{{$typeCorrective->name}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="input">
                         <label for="4thCategory">Mechanical / Electrical</label>
-                        <select name="4thCategory" id="">
+                        <select name="4thCategory" id="4thCategory">
+                        <option > Choose Here</option>
                         @foreach ($mechElec as $mechElec)
-                            <option value="">{{$mechElec->name}}</option>
+                            <option value="{{$mechElec->third_request_category_id}}">{{$mechElec->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -72,6 +77,7 @@
                         <input type="file" name="file1">
                     </div>
                 </div>
+                <button>submit</button>
             </form>
         </div>
     </section>

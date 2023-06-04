@@ -31,12 +31,6 @@ class UserSendRequestController extends Controller
         $firstVehicle = $data->first(); // Access the first model in the collection
         $plateNo = $firstVehicle->model_id; // Store the value of the 'plate_no' column in the $plateNo variable
 
-
-        //this is working bu tneed to change the moodel name to match the name in the migration
-        // $buDept = auth()->user()->bu_dept_id;
-        // $data3 = BU_Dept::where('id', $buDept)->pluck('name')->first();
-
-        //this is working bu tneed to change the moodel name to match the name in the migration
         $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
 
 
@@ -50,19 +44,28 @@ class UserSendRequestController extends Controller
         return view('components/user/section/user-send-request',compact('data','mechElec','plateNo','data2','modeTransact','typeRequest','typeCorrective'));
     }
 
-    public function submit(){
-       
-    
-        $request->validate([
-            'employee_code' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+    public function submit(Request $request){
+
+        // $request->validate([
+        //     'employee_code' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        // ]);
 
         $reqHistory = new RequestParticular;
-        $reqHistory->name = $request->input('form_name');
-        $reqHistory->email = $request->input('form_email');
+        $reqHistory->user_id = auth()->id();
+        $reqHistory->mode_of_transaction_id = $request->input('modeTransact');
+        $reqHistory->type_of_request_id = $request->input('2ndCategory');
+        $reqHistory->{'3rd_request_category_id'} = $request->input('3rdCategory');
+        $reqHistory->{'4th_request_category_id'} = $request->input('4thCategory');
+        $reqHistory->quotation_amount = $request->input('quotation');
+        
         $reqHistory->save();
+
+
+
+
+        return redirect('/user/send-request');
 
         
        
