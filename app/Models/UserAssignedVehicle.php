@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class UserAssignedVehicle extends Model
 {
     use HasFactory;
+    
 
+
+    public function details()
+    {
+        return $this->hasOne(Details::class);
+    }
+
+//  ///////////////////////////////////////////////////
     public function requestHistories(): HasMany
     {
         return $this->hasMany(Request_History::class);

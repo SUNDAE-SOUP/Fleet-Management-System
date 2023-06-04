@@ -32,6 +32,11 @@ Route::get('/', function () {
 
 
 //routes for the admin 
+
+//check UserDashboardController and RedirectifAuthenticated
+Route::get('/admin/view', [AdminDashboardController::class, 'index'])->name('admin.view');
+
+
 Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
     Route::get('/admin/dashboard', "index");
 });
@@ -69,6 +74,17 @@ Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(fu
 
 
 //routes for the user
+//check UserDashboardController and RedirectifAuthenticated
+Route::get('/user/view', [UserDashboardController::class, 'index'])->name('user.view');
+
+Route::get('/user/view', [UserDashboardController::class, 'getvalue']);
+
+
+
+
+
+
+
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
     Route::get('/user/dashboard', "index");
 });

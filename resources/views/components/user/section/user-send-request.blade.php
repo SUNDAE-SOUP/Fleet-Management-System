@@ -2,21 +2,24 @@
     <x-user.user-sidebar />
     <section id="userSendRequest">
         <div class="sendRequest">
+            this is USER SEND REQUEST
             <div class="sendRequestHeader">
                 <div class="label">Name:</div>
-                <div>Rhejoel Joson</div>
+                <div>{{auth()->user()->name}}</div>
                 <div class="label"></div>
                 <div></div>
+                @foreach ($data as $data)
                 <div class="label">Plate#:</div>
-                <div>NCI4421</div>
+                <div>{{ $data->plate_no }}</div>
                 <div class="label">Engine#:</div>
-                <div>3NRX954321</div>
+                <div>{{ $data->engine_no }}</div>
                 <div class="label">Year Model:</div>
-                <div>2020</div>
+                <div>{{ $data->year_model }}</div>
                 <div class="label">Chassis#:</div>
-                <div>PA1B18F34P4204321</div>
+                <div>{{ $data->chassis_no }}</div>
                 <div class="label">Make/Model:</div>
                 <div>TOYOTA VIOS 1.3J</div>
+                @endforeach
             </div><br><br>
             <form action="">
                 <div class="formDropDown">
@@ -29,7 +32,9 @@
                     <div class="input">
                         <label for="1stCategory">Mode of Transaction</label>
                         <select name="1stCategory" id="">
-                            <option value="">Select Mode of Transaction</option>
+                        @foreach ($modeTransact as $modeTransact)
+                            <option value="">{{ $modeTransact->name }}</option>
+                           
                         </select>
                     </div>
                     <div class="input">

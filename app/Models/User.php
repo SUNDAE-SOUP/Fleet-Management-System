@@ -22,6 +22,7 @@ class User extends Authenticatable
         'employee_code',
         'email',
         'password',
+        'role_id',
     ];
 
     /**
@@ -68,4 +69,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo(BU_Dept::class, 'bu_dept_id');
     }    
+
+    
 }

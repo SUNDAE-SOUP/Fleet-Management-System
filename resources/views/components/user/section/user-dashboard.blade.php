@@ -1,32 +1,34 @@
 <x-user.user-header />
     <x-user.user-sidebar />
     <section id="userDashboardSection">
+        this is USER DASHBOARD {{auth()->user()->name}}
         <h1>Your Company Car Details</h1>
         <div class="carDetails">
+            @foreach ($data as $data)
             <div class="label">Plate#</div>
-            <div>NCI4421</div>
+            <div> {{ $data->plate_no }}</div>
             <div class="label">Engine#</div>
-            <div>3NRX954321</div>
+            <div> {{ $data->engine_no }}</div>
             <div class="label">Year Model:</div>
-            <div>2020</div>
+            <div> {{ $data->year_model }}</div>
             <div class="label">Chassis#:</div>
-            <div>PA1B18F34P4204321</div>
+            <div>{{ $data->chassis_no }}</div>
             <div class="label">Make/Model:</div>
-            <div>TOYOTA VIOS 1.3J</div>
-            <div class="label">LTO OR Exp:</div>
-            <div>04/05/2023</div>
-            <div class="label"></div>
-            <div></div>
-            <div class="label">LTO OR Copy</div>
-            <div>LTO OR Copy</div>
+            <div>TOYOTA VIOS 1.3J {{$plateNo}}  </div>
+            <div class="label">LTO OR Copy:</div>
+            <div>{{ $data->lto_or_copy }}</div>
+            
+            
         </div>
         <div class="carDetails">
             <div class="label">Driver’s License#:</div>
-            <div>N04-17-017423</div>
+            <div>{{ $data->engine_no }}</div>
+            
             <div class="label">BU/Dept:</div>
-            <div>Cardinals</div>
+            <div>Cardinals  </div>
             <div class="label">Expiration Date:</div>
             <div>01/01/2033</div>
+            @endforeach
             <div></div>
             <div></div>
             <div class="label">Download Copy</div>
