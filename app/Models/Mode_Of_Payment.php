@@ -9,6 +9,8 @@ class Mode_Of_Payment extends Model
 {
     use HasFactory;
 
+    protected $table = "mode_of_transactions";
+
     public function requestParticulars(): HasMany
     {
         return $this->hasMany(RequestParticular::class);
