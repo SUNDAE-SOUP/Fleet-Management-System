@@ -9,7 +9,7 @@ class UserAssignedVehicle extends Model
 {
     use HasFactory;
     
-
+    protected $table = 'user_assigned_vehicles';
 
     public function details()
     {

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Car_Brand extends Model
 {
     use HasFactory;
+    
+    protected $table = 'car_brands';
 
     public function carModels(): HasMany
     {

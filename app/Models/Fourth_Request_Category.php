@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Fourth_Request_Category extends Model
 {
     use HasFactory;
+    
+    protected $table = '4th_request_categories';
 
     public function requestParticulars(): HasMany
     {

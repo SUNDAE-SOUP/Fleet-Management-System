@@ -9,6 +9,8 @@ class Type_Of_Request extends Model
 {
     use HasFactory;
 
+    protected $table = 'type_of_requests';
+
     public function requestParticulars(): HasMany
     {
         return $this->hasMany(RequestParticular::class);

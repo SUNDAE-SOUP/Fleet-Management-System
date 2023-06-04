@@ -9,6 +9,8 @@ class Third_Request_Category extends Model
 {
     use HasFactory;
 
+    protected $table = '3rd_request_categories';
+
     public function requestParticulars(): HasMany
     {
         return $this->hasMany(RequestParticular::class);

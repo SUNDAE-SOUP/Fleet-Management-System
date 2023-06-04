@@ -9,6 +9,8 @@ class RequestParticular extends Model
 {
     use HasFactory;
 
+    protected $table = 'request_particulars';
+
     public function requestHistories(): HasMany
     {
         return $this->hasMany(Request_History::class);

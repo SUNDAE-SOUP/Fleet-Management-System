@@ -9,6 +9,8 @@ class AssignmentStatus extends Model
 {
     use HasFactory;
 
+    protected $table = 'assignment_statuses';
+
     public function userAssignedVehicles(): HasMany
     {
         return $this->hasMany(userAssignedVehicle::class);
