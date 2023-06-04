@@ -5,12 +5,12 @@
             this is USER SEND REQUEST
             <div class="sendRequestHeader">
                 <div class="label">Name:</div>
-                <div>{{auth()->user()->name}}</div>
+                <div><p></p>{{auth()->user()->name}}</div>
                 <div class="label"></div>
                 <div></div>
                 @foreach ($data as $data)
                 <div class="label">Plate#:</div>
-                <div>{{ $data->plate_no }}</div>
+                <div>{{ $data->plate_no }} </div>
                 <div class="label">Engine#:</div>
                 <div>{{ $data->engine_no }}</div>
                 <div class="label">Year Model:</div>
@@ -18,10 +18,10 @@
                 <div class="label">Chassis#:</div>
                 <div>{{ $data->chassis_no }}</div>
                 <div class="label">Make/Model:</div>
-                <div>TOYOTA VIOS 1.3J</div>
+                <div>{{$data2}}</div>
                 @endforeach
             </div><br><br>
-            <form action="">
+            <form method="POST" action="">
                 <div class="formDropDown">
                     <input type="hidden" name="name" value="Rhejoel Joson">
                     <input type="hidden" name="plate#" value="NCI4421">
@@ -30,29 +30,35 @@
                     <input type="hidden" name="chassis#" value="PA1B18F34P4204321">
                     <input type="hidden" name="makeModel" value="TOYOTA VIOS 1.3J">
                     <div class="input">
-                        <label for="1stCategory">Mode of Transaction</label>
-                        <select name="1stCategory" id="">
-                       
-                            <option value="">asdasd</option>
-                       
+                        <label for="modeTransact">Mode of Transaction</label>
+                        <select name="modeTransact" id="">
+                        @foreach ($modeTransact as $modeTransact)
+                            <option value="{{$modeTransact->id}}">{{$modeTransact->name}}</option>
+                        @endforeach
                         </select>
                     </div>
                     <div class="input">
                         <label for="2ndCategory">Type of Request</label>
                         <select name="2ndCategoryOR" id="">
-                            <option value="">Type of Request</option>
+                        @foreach ($typeRequest as $typeRequest)
+                            <option value="">{{$typeRequest->name}}</option>
+                        @endforeach
                         </select>
                     </div>
                     <div class="input">
                         <label for="3rdCategory">Type of Corrective</label>
                         <select name="3rdCategory" id="">
-                            <option value="">Select</option>
+                            @foreach ($typeCorrective as $typeCorrective)
+                            <option value="">{{$typeCorrective->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="input">
                         <label for="4thCategory">Mechanical / Electrical</label>
                         <select name="4thCategory" id="">
-                            <option value="">Select</option>
+                        @foreach ($mechElec as $mechElec)
+                            <option value="">{{$mechElec->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

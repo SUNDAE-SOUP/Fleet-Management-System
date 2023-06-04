@@ -14,7 +14,7 @@
             <div class="label">Chassis#:</div>
             <div>{{ $data->chassis_no }}</div>
             <div class="label">Make/Model:</div>
-            <div>TOYOTA VIOS 1.3J {{$plateNo}}  </div>
+            <div>{{$data2}}  </div>
             <div class="label">LTO OR Copy:</div>
             <div>{{ $data->lto_or_copy }}</div>
             
@@ -25,7 +25,7 @@
             <div>{{ $data->engine_no }}</div>
             
             <div class="label">BU/Dept:</div>
-            <div>Cardinals  </div>
+            <div>{{$data3}} </div>
             <div class="label">Expiration Date:</div>
             <div>01/01/2033</div>
             @endforeach

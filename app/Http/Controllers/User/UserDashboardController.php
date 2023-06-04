@@ -21,18 +21,18 @@ class UserDashboardController extends Controller
         $plateNo = $firstVehicle->model_id; // Store the value of the 'plate_no' column in the $plateNo variable
 
 
-        //this is working bu tneed to change the moodel name to match the name in the migration
-        // $buDept = auth()->user()->bu_dept_id;
-        // $data3 = BU_Dept::where('id', $buDept)->pluck('name')->first();
+       
+        $buDept = auth()->user()->bu_dept_id;
+        $data3 = BU_Dept::where('id', $buDept)->pluck('name')->first();
 
         //this is working bu tneed to change the moodel name to match the name in the migration
-        // $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
+        $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
         
 
-        return view('components/user/section/user-dashboard',compact('data','plateNo'));
+        return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2'));
    
         
-        // return view('components/user/section/user-dashboard');
+       
     }
 
 

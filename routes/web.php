@@ -82,10 +82,15 @@ Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(fu
 //check UserDashboardController and RedirectifAuthenticated
 
 
-Route::get('/user/view', [UserDashboardController::class, 'getvalue']);
+// Route::get('/user/view', [UserDashboardController::class, 'getvalue']);
 
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
     Route::get('/user/view','index')->name('user.view');
+});
+
+Route::middleware(['auth'])->controller(UserSendRequestController::class)->group(function () {
+    Route::get('/user/send-request', "index");
+    Route::get('/user/send-request/submit', "submit");
 });
 
 

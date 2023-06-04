@@ -6,10 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
+
 use App\Models\Vehicle;
 use App\Models\Car_Model;
 use App\Models\BU_Dept;
-use App\Models\Mode_Transaction;
+use App\Models\Mode_Of_Payment;
+use App\Models\Type_Of_Request;
+use App\Models\Third_Request_Category;
+use App\Models\Fourth_Request_Category;
+use App\Models\RequestParticular;
 
 class UserSendRequestController extends Controller
 {
@@ -32,19 +37,33 @@ class UserSendRequestController extends Controller
         // $data3 = BU_Dept::where('id', $buDept)->pluck('name')->first();
 
         //this is working bu tneed to change the moodel name to match the name in the migration
-        // $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
+        $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
 
 
-        // $modeTransact = Mode_Transaction::get();//get all the column values in vehicles table
+        $modeTransact = Mode_Of_Payment::get();//get all the column values in vehicles table
+        $typeRequest = Type_Of_Request::get();//get all the column values 
+        $typeCorrective =Third_Request_Category::get();
+        $mechElec = Fourth_Request_Category::get();
 
         
 
-        return view('components/user/section/user-send-request',compact('data','plateNo',));
+        return view('components/user/section/user-send-request',compact('data','mechElec','plateNo','data2','modeTransact','typeRequest','typeCorrective'));
     }
 
     public function submit(){
-        $modeTransact = Mode_Transaction::get();//get all the column values in vehicles table
-        
+       
+    
+        $request->validate([
+            'employee_code' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $reqHistory = new RequestParticular;
+        $reqHistory->name = $request->input('form_name');
+        $reqHistory->email = $request->input('form_email');
+        $reqHistory->save();
+
         
        
     }
