@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\AdminCarRepairHistoryController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminHelpController;
 use App\Http\Controllers\Admin\VehicleMasterlistController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,10 @@ Route::get('/', function () {
 
 //check UserDashboardController and RedirectifAuthenticated
 Route::get('/admin/view', [AdminDashboardController::class, 'index'])->name('admin.view');
+Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
+    Route::get('/admin/view','index')->name('admin.view');
+});
+
 
 
 Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
@@ -75,11 +80,13 @@ Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(fu
 
 //routes for the user
 //check UserDashboardController and RedirectifAuthenticated
-Route::get('/user/view', [UserDashboardController::class, 'index'])->name('user.view');
+
 
 Route::get('/user/view', [UserDashboardController::class, 'getvalue']);
 
-
+Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
+    Route::get('/user/view','index')->name('user.view');
+});
 
 
 

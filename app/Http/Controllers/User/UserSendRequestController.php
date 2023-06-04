@@ -35,11 +35,11 @@ class UserSendRequestController extends Controller
         // $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
 
 
-        $modeTransact = Mode_Transaction::get();//get all the column values in vehicles table
+        // $modeTransact = Mode_Transaction::get();//get all the column values in vehicles table
 
         
 
-        return view('components/user/section/user-send-request',compact('data','plateNo','modeTransact'));
+        return view('components/user/section/user-send-request',compact('data','plateNo',));
     }
 
     public function submit(){

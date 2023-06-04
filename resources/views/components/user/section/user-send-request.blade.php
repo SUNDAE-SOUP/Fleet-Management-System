@@ -32,9 +32,9 @@
                     <div class="input">
                         <label for="1stCategory">Mode of Transaction</label>
                         <select name="1stCategory" id="">
-                        @foreach ($modeTransact as $modeTransact)
-                            <option value="">{{ $modeTransact->name }}</option>
-                           
+                       
+                            <option value="">asdasd</option>
+                       
                         </select>
                     </div>
                     <div class="input">
