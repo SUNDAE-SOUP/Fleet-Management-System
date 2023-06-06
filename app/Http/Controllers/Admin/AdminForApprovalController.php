@@ -12,9 +12,9 @@ class AdminForApprovalController extends Controller
 {
     public function index(){
 
-        return Request_History::all();
+        /* return Request_History::all(); */
 
-        /* return view('components/admin/section/admin-for-approval'); */
+        return view('components/admin/section/admin-for-approval');
     }
 
 
