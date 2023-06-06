@@ -18,7 +18,7 @@ class RequestParticular extends Model
 
     public function modeOfTransaction(): BelongsTo
     {
-        return $this->belongsTo(Mode_Of_Transaction::class, 'mode_of_transaction_id');
+        return $this->belongsTo(Mode_Of_Payment::class, 'mode_of_transaction_id');
     }
 
     public function typeOfRequest(): BelongsTo

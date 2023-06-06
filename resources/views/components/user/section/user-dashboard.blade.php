@@ -39,50 +39,28 @@
                 <div>80,000.00</div>
             </div><br>
             <h4 class="label">On process request:</h4>
-            <div class="request">
-                <div class="requestHeader">
-                    <div class="label">Req#:</div>
-                    <div>24</div>
-                    <div class="label">Particulars</div>
-                    <div>20K PMS</div>
-                    <div class="label">M.O.T.</div>
-                    <div>Purchase Order</div>
-                    <div class="label">Shop</div>
-                    <div>Shell Binan..</div>
-                </div>
-                <div class="progressBarHeader">PROGRESS BAR</div>
-                <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar progress-bar-striped" style="width: 67%"></div>
-                </div>
-                <div class=progressDetails>
-                    <div>Submission</div>
-                    <div>Evaluation</div>
-                    <div>Approval</div>
-                    <div>PO issuance</div>
-                </div>
-            </div>
-            <div class="request">
-                <div class="requestHeader">
-                    <div class="label">Req#:</div>
-                    <div>24</div>
-                    <div class="label">Particulars</div>
-                    <div>20K PMS</div>
-                    <div class="label">M.O.T.</div>
-                    <div>Purchase Order</div>
-                    <div class="label">Shop</div>
-                    <div>Shell Binan..</div>
-                </div>
-                <div class="progressBarHeader">PROGRESS BAR</div>
-                <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar progress-bar-striped" style="width: 33%"></div>
-                </div>
-                <div class=progressDetails>
-                    <div>Submission</div>
-                    <div>Evaluation</div>
-                    <div>Approval</div>
-                    <div>PO issuance</div>
-                </div>
-            </div>
+            @foreach ($sample as  $asd)
+    <div class="request">
+        <div class="requestHeader">
+            <div class="label">Req#:</div>
+            <div>24</div>
+            <div class="label">Particulars</div>
+            <div>{{ $asd->type_of_request_id }}</div>
+            <div class="label">M.O.T.</div>
+            <div> {{App\Models\Mode_Of_Payment::find($asd->mode_of_transaction_id)->name }}</div>
+        </div>
+        <!-- <div class="progressBarHeader">PROGRESS BAR</div>
+        <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped" style="width: 33%"></div>
+        </div>
+        <div class="progressDetails">
+            <div>Submission</div>
+            <div>Evaluation</div>
+            <div>Approval</div>
+            <div>PO issuance</div>
+        </div> -->
+    </div>
+@endforeach
         </div>
     </section>
 <x-user.user-footer />

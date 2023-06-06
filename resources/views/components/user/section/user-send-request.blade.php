@@ -2,10 +2,10 @@
     <x-user.user-sidebar />
     <section id="userSendRequest">
         <div class="sendRequest">
-            this is USER SEND REQUEST
+            <!-- this is USER SEND REQUEST -->
             <div class="sendRequestHeader">
                 <div class="label">Name:</div>
-                <div><p></p>{{auth()->user()->name}}</div>
+                <div>{{auth()->user()->name}}</div>
                 <div class="label"></div>
                 <div></div>
                 @foreach ($data as $data)
@@ -44,7 +44,7 @@
                         <select name="2ndCategory" id="2ndCategory">
                         <option > Choose Here</option>
                         @foreach ($typeRequest as $typeRequest)
-                            <option value="{{$typeRequest->mode_of_transaction_id}}">{{$typeRequest->name}}</option>
+                            <option value="{{$typeRequest->id}}">{{$typeRequest->name}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -53,7 +53,7 @@
                         <select name="3rdCategory" id="3rdCategory">
                         <option > Choose Here</option>
                             @foreach ($typeCorrective as $typeCorrective)
-                            <option value="{{$typeCorrective->type_of_request_id}}">{{$typeCorrective->name}}</option>
+                            <option value="{{$typeCorrective->id}}">{{$typeCorrective->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -62,7 +62,7 @@
                         <select name="4thCategory" id="4thCategory">
                         <option > Choose Here</option>
                         @foreach ($mechElec as $mechElec)
-                            <option value="{{$mechElec->third_request_category_id}}">{{$mechElec->name}}</option>
+                            <option value="{{$mechElec->id}}">{{$mechElec->name}}</option>
                             @endforeach
                         </select>
                     </div>
