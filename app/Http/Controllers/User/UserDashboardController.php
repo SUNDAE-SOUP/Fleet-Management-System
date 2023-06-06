@@ -38,11 +38,8 @@ class UserDashboardController extends Controller
         if ($reqParticular->isEmpty()){
             return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
         }else {
-
-
             return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
         }
-
  
     }
 
