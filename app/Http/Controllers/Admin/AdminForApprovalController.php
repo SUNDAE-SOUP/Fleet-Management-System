@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 use App\Models\UserAssignedVehicle;
 use App\Models\Status;
 use App\Models\Request_History;
+use App\Models\RequestParticular;
+use App\Models\Vehicle;
 
 class AdminForApprovalController extends Controller
 {
     public function index(){
+        $userId = auth()->user()->id;
 
-        return Request_History::all();
+        $reqParticular = RequestParticular::get();
 
-        /* return view('components/admin/section/admin-for-approval'); */
+
+       
+
+        return view('components/admin/section/admin-for-approval',compact('reqParticular'));
     }
 
 
