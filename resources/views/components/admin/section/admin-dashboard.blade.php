@@ -1,7 +1,8 @@
 <x-admin.admin-header />
     <x-admin.admin-sidebar />
-    this is ADMIN DASHBOARD
+    
     <section id="dashboardSection">
+    this is ADMIN DASHBOARD {{auth()->user()->name}}
         <div class="dropDownsHolderHolder">
             <div class="dropDownsHolder">
                 <div class="dropDowns">
