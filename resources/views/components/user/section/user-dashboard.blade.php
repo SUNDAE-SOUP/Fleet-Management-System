@@ -34,20 +34,20 @@
             <div class="label">Download Copy</div>
         </div>
         <div class="otherDetails">
-            <div  class="otherDetailsHeader">
+            <!-- <div  class="otherDetailsHeader">
                 <div class="label">Repair and Maintenance Expense: PHP</div>
                 <div>80,000.00</div>
-            </div><br>
+            </div><br> -->
             <h4 class="label">On process request:</h4>
-            @foreach ($sample as  $asd)
+            @foreach ($reqParticular as  $data)
     <div class="request">
         <div class="requestHeader">
             <div class="label">Req#:</div>
-            <div>24</div>
+            <div>{{$data->id}}</div>
             <div class="label">Particulars</div>
-            <div>{{ $asd->type_of_request_id }}</div>
+            <div>{{App\Models\Type_Of_Request::find ($data->type_of_request_id)->name }}</div>
             <div class="label">M.O.T.</div>
-            <div> {{App\Models\Mode_Of_Payment::find($asd->mode_of_transaction_id)->name }}</div>
+            <div> {{App\Models\Mode_Of_Payment::find($data->mode_of_transaction_id)->name }}</div>
         </div>
         <!-- <div class="progressBarHeader">PROGRESS BAR</div>
         <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">

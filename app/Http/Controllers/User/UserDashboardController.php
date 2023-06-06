@@ -32,11 +32,11 @@ class UserDashboardController extends Controller
         // $ModeTransactName=Mode_Of_Payment::pluck('name');
         // $typeReq =Type_Of_Request::pluck('name');
         
-        $sample = RequestParticular::where ('user_id', $userId )->get();
+        $reqParticular = RequestParticular::where ('user_id', $userId )->get();
         $roleId = auth()->user()->role_id;
 
  
-        return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','sample'));
+        return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
     }
 
 
