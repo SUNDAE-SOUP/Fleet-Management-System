@@ -25,7 +25,12 @@ class AdminForApprovalController extends Controller
         $carModel = Car_Model::where('id', $plateNo)->pluck('name')->first();// car model
        
 
-        return view('components/admin/section/admin-for-approval',compact('reqParticular','carModel'));
+        if ($reqParticular->isEmpty()){
+            return view('components/admin/section/admin-for-approval',compact('reqParticular','carModel'));
+        }else {
+            return view('components/admin/section/admin-for-approval',compact('reqParticular','carModel'));
+        }
+
     }
 
 
