@@ -9,8 +9,21 @@ class Type_Of_Request extends Model
 {
     use HasFactory;
 
-    public function requestHistories(): HasMany
+    protected $table = 'type_of_requests';
+
+    public function requestParticulars(): HasMany
     {
-        return $this->hasMany(Request_History::class);
+        return $this->hasMany(RequestParticular::class);
     }
+
+    public function modeOfTransaction(): BelongsTo
+    {
+        return $this->belongsTo(Mode_Of_Transaction::class, 'mode_of_transaction_id');
+    }
+
+    public function thirdRequestCategories(): HasMany
+    {
+        return $this->hasMany(Third_Request_Category::class);
+    }
+
 }

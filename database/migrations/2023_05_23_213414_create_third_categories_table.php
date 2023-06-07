@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('3rd_request_categories', function (Blueprint $table) {
+        Schema::create('third_request_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->foreignId('type_of_request_id')->nullable()->constrained();

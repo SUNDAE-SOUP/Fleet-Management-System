@@ -9,24 +9,27 @@ class Request_History extends Model
 {
     use HasFactory;
 
-    public function user(): BelongsTo
+    protected $table = 'request_histories';
+
+    public function userAssignedVehicle(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(UserAssignedVehicle::class, 'user_assigned_vehicle_id');
     }
 
-    public function modeOfPayment(): BelongsTo
+    public function requestParticular(): BelongsTo
     {
-        return $this->belongsTo(Mode_Of_Payment::class);
+        return $this->belongsTo(RequestParticular::class, 'request_particular_id');
     }
 
-    public function typeOfRequest(): BelongsTo
+    //disabled due to ERD revision
+    /* public function typeOfRequest(): BelongsTo
     {
-        return $this->belongsTo(Type_Of_Request::class);
-    }
+        return $this->belongsTo(Type_Of_Request::class, '');
+    } */
 
     public function status(): BelongsTo
     {
-        return $this->belongsTo(Status::class);
+        return $this->belongsTo(Status::class, 'status_id');
     }
 }
 

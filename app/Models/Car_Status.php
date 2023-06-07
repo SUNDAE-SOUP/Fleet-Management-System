@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Car_Status extends Model
 {
     use HasFactory;
+    
+    protected $table = 'car_statuses';
 
-    public function users(): HasMany
+    public function vehicles(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Vehicle::class);
     }
 }

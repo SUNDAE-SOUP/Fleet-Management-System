@@ -22,6 +22,7 @@ class User extends Authenticatable
         'employee_code',
         'email',
         'password',
+        'role_id',
     ];
 
     /**
@@ -43,23 +44,31 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function requestHistories(): HasMany
+    //disabled due to ERD revision
+    /* public function requestHistories(): HasMany
     {
         return $this->hasMany(Request_History::class);
-    }
+    } */
 
-    public function vehicle(): HasOne
+    /* public function vehicle(): HasOne
     {
         return $this->hasOne(Vehicle::class);
+    } */
+
+    public function userAssignedVehicles(): HasMany
+    {
+        return $this->hasMany(UserAssignedVehicle::Class);
     }
 
     public function role(): BelongsTo
     {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
     public function buDept(): BelongsTo
     {
-        return $this->belongsTo(BU_Dept::class);
+        return $this->belongsTo(BU_Dept::class, 'bu_dept_id');
     }    
+
+    
 }

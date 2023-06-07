@@ -33,7 +33,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $roleId = auth()->user()->role_id;
+
+        if ($roleId == 1) {
+            return redirect()->route('user.view',compact('data','plateNo','data3','data2','sample'));
+        } else {
+            return redirect()->route('admin.view');
+        }
+
+        // return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**

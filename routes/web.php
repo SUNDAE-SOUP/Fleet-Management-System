@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\AdminHistoryController;
 use App\Http\Controllers\Admin\AdminCarRepairHistoryController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminHelpController;
+use App\Http\Controllers\Admin\VehicleMasterlistController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,16 @@ Route::get('/', function () {
 
 
 //routes for the admin 
+
+//check UserDashboardController and RedirectifAuthenticated
+// Route::get('/admin/view', [AdminDashboardController::class, 'index'])->name('admin.view');
+Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
+    Route::get('/admin/view','index')->name('admin.view');
+    
+});
+
+
+
 Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(function () {
     Route::get('/admin/dashboard', "index");
 });
@@ -55,7 +67,38 @@ Route::middleware(['auth'])->controller(AdminHelpController::class)->group(funct
     Route::get('/admin/help', "index");
 });
 
+
+//for VEHICLE MASTER LIST
+Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(function () {
+    Route::get('/admin/vehicle-masterlist', 'index');
+
+});
+
+
+
+
+
+
 //routes for the user
+//check UserDashboardController and RedirectifAuthenticated
+
+
+// Route::get('/user/view', [UserDashboardController::class, 'getvalue']);
+
+Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
+    Route::get('/user/view','index')->name('user.view');
+    
+});
+
+Route::middleware(['auth'])->controller(UserSendRequestController::class)->group(function () {
+    Route::get('/user/send-request', "index");
+    Route::post('/user/send-request/submit', "submit");
+});
+
+
+
+
+
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
     Route::get('/user/dashboard', "index");
 });

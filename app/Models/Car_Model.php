@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Car_Model extends Model
 {
     use HasFactory;
+    
+    protected $table = "models";
 
     public function carBrand(): BelongsTo
     {
-        return $this->belongsTo(Car_Brand::class);
+        return $this->belongsTo(Car_Brand::class, 'car_brand_id');
     }
 
     public function vehicles(): HasMany
