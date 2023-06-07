@@ -22,6 +22,8 @@ return new class extends Migration
             $table->boolean('is_credit_card_within_limit')->nullable();
             $table->string('reason_for_cash_payment')->nullable();
             $table->boolean('how_many_liters')->nullable();
+            $table->string('updated_at')->nullable();
+            $table->string('created_at')->nullable();
         });
     }
 

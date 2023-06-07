@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('4th_request_categories', function (Blueprint $table) {
             $table->id();
             $table->name('name')->nullable();
-            $table->foreignId('3rd_request_category_id')->nullable()-constrained();
+            $table->foreignId('third_request_category_id')->nullable()-constrained();
         });
     }
 

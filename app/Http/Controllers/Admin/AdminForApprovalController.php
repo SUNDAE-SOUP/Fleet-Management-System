@@ -24,14 +24,14 @@ class AdminForApprovalController extends Controller
         $plateNo = $firstVehicle->model_id; // Store the value of the 'plate_no' column in the $plateNo variable
         $carModel = Car_Model::where('id', $plateNo)->pluck('name')->first();// car model
        
-
         if ($reqParticular->isEmpty()){
             return view('components/admin/section/admin-for-approval',compact('reqParticular','carModel'));
         }else {
             return view('components/admin/section/admin-for-approval',compact('reqParticular','carModel'));
         }
 
+    
     }
-
+    
 
 }
