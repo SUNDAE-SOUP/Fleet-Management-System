@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('3rd_request_categories');
+        Schema::dropIfExists('third_request_categories');
     }
 };
