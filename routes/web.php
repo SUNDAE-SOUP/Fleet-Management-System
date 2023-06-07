@@ -49,6 +49,7 @@ Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(
 
 Route::middleware(['auth'])->controller(AdminForApprovalController::class)->group(function () {
     Route::get('/admin/for-approval', "index");
+    
 });
 
 Route::middleware(['auth'])->controller(AdminHistoryController::class)->group(function () {
