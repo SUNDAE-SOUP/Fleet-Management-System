@@ -8,8 +8,7 @@
                 </select>
             </div>
         </div>
-        <div class="headerBorder">
-        </div>
+
         <div class="forApprovalContainer">
        
        <div class="forApprovalHeader">
@@ -49,15 +48,18 @@
                <div>Ethanworx Inc.</div>
                
             </div>
-           <div class="forApprovalHeaderData">Shop</div>
-            <div>
-                @if ($data->is_approved == 1)
-                <p>Approved</p>
-                @elseif ($data->is_approved == 2)
-                <p>Rejected</p>
-                @endif
+
+            <div class="approvalResponse">
+                <div class="forApprovalHeaderData">Response</div>
+
+                    @if ($data->is_approved == 1)
+                    <p>Approved</p>
+                    @elseif ($data->is_approved == 2)
+                    <p>Rejected</p>
+                    @endif
+
+                </div>
             </div>
-        </div>
        @endforeach
         
     </section>
