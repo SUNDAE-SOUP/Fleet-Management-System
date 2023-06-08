@@ -92,7 +92,8 @@ Route::scopeBindings()->controller(VehicleMasterlistController::class)->group(fu
 
 Route::middleware(['auth'])->controller(UserDashboardController::class)->group(function () {
     Route::get('/user/view','index')->name('user.view');
-    
+    /* Route::get('/user/status', 'show'); */
+
 });
 
 Route::middleware(['auth'])->controller(UserSendRequestController::class)->group(function () {

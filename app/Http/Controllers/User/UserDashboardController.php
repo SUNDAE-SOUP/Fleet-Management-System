@@ -35,14 +35,27 @@ class UserDashboardController extends Controller
         $reqParticular = RequestParticular::where('user_id', $userId)->Where('is_approved', 0)->get();
         $roleId = auth()->user()->role_id;
 
+        
         if ($reqParticular->isEmpty()){
-            return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
+            return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular',));
         }else {
             return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
         }
  
     }
 
+    /* public function show(){
+        $request_particular = RequestParticular::find('is_approved');
+        $is_approved = $request_particular->is_approved;
+
+        $percentage = 34;
+
+        if ($is_approved == 1){
+            $percentage = 65;
+        }
+
+        return view('components/user/section/user-dashboard',compact('percentage'));
+    } */
 
 
 
