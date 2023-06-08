@@ -72,10 +72,10 @@
                         <label name="quotation">Quotation Amount</label>
                         <input type="number" name="quotation">
                     </div>
-                    <div class="input">
+                    <!-- <div class="input">
                         <label for="file1">File upload</label>
                         <input type="file" name="file1">
-                    </div>
+                    </div> -->
                 </div>
                 <button>submit</button>
             </form>

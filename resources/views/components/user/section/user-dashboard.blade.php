@@ -1,7 +1,6 @@
 <x-user.user-header />
     <x-user.user-sidebar />
     <section id="userDashboardSection">
-        this is USER DASHBOARD {{auth()->user()->name}}
         <h1>Your Company Car Details</h1>
         <div class="carDetails">
             @foreach ($data as $data)
