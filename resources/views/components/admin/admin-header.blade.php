@@ -22,7 +22,7 @@
                 <!-- <input type="text" id="search" placeholder="Search Here">
                 <label for="search"><i class="fas fa-search"></i></label> -->
             </div>
-            <div></div>
+            <div>Hi, {{auth()->user()->name}}</div>
             <div class="bell">
               <i class="fas fa-bell"></i>
             </div>
