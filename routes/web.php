@@ -43,6 +43,7 @@ Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(
 Route::middleware(['auth'])->controller(AdminForApprovalController::class)->group(function () {
     Route::get('/admin/for-approval', "index");
     Route::post('/admin/approved', "approve");
+    Route::post('/admin/disapproved', "disapprove");
 });
 
 

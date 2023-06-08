@@ -36,23 +36,27 @@ class AdminForApprovalController extends Controller
     }
 
     public function approve(){
-        $reqParticularId = RequestParticular::get('id'); // Assuming you are retrieving the 'id' from the request
-        $target = RequestParticular::find($reqParticularId); // Retrieve the request particular by id
-    
-        if ($target->is_approved == 0) { // Check if target exists and is not already approved
-            $target->is_approved = 1;
-            $target->save();
+        $reqParticular = RequestParticular::where('is_approved', 0)->first(); // Find the first record with 'is_approved' value of 0
+        
+        if ($reqParticular) {
+            $reqParticular->is_approved = 1;
+            $reqParticular->save();
         }
-    
+        
+        return redirect('/admin/for-approval');
+    }
+
+    public function disapprove(){
+        $reqParticular = RequestParticular::where('is_approved', 0)->first(); // Find the first record with 'is_approved' value of 0
+        
+        if ($reqParticular) {
+            $reqParticular->is_approved = 2;
+            $reqParticular->save();
+        }
+        
         return redirect('/admin/for-approval');
     }
     
-
-    public function disapprove(){
-       
-
-    
-    }
     
 
 }

@@ -54,10 +54,14 @@
                         </button>
 
                     </form>
+                    
+                    <form method="POST" action="{{ ('/admin/disapproved') }}">
+                     @csrf
+                        <button class="disapproved">
+                            <i class="fa-solid fa-thumbs-down"></i>
+                        </button>
+                    </form>
 
-                    <button class="disapproved">
-                        <i class="fa-solid fa-thumbs-down"></i>
-                    </button>
                 </div>
             </div>
             @endforeach
