@@ -36,7 +36,7 @@ class AuthenticatedSessionController extends Controller
         $roleId = auth()->user()->role_id;
 
         if ($roleId == 1) {
-            return redirect()->route('user.view',compact('data','plateNo','data3','data2','sample'));
+            return redirect()->route('user.view',);
         } else {
             return redirect()->route('admin.view');
         }

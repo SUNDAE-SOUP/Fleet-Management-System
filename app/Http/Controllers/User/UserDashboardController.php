@@ -32,53 +32,19 @@ class UserDashboardController extends Controller
         // $ModeTransactName=Mode_Of_Payment::pluck('name');
         // $typeReq =Type_Of_Request::pluck('name');
         
-        $reqParticular = RequestParticular::where ('user_id', $userId )->get();
+        $reqParticular = RequestParticular::where('user_id', $userId)->Where('is_approved', 0)->get();
         $roleId = auth()->user()->role_id;
 
         if ($reqParticular->isEmpty()){
             return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
         }else {
-
-
             return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
         }
-
  
     }
 
 
 
-
-    // public function index(){
-    //     $userId = auth()->id(); // Get the ID of the authenticated user
-    //     $data = Vehicle::where('id', $userId)->get();//get the column values in vehicles table
-
-    //     $firstVehicle = $data->first(); // Access the first model in the collection
-    //     $plateNo = $firstVehicle->model_id; // Store the value of the 'plate_no' column in the $plateNo variable
-        
-    //     $buDept = auth()->user()->bu_dept_id;
-    //     $data3 = BU_Dept::where('id', $buDept)->pluck('name')->first();
-
-    //     $data2 = Car_Model::where('id', $plateNo)->pluck('name')->first();
-
-    //     /////////////this is for displaying the requests//////////////
-    //     // $ModeTransactName=Mode_Of_Payment::pluck('name');
-    //     // $typeReq =Type_Of_Request::pluck('name');
-        
-    //     $reqParticular = RequestParticular::where ('user_id', $userId )->get();
-    //     $roleId = auth()->user()->role_id;
-
-    //     if ($reqParticular->isEmpty()){
-    //         return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
-    //     }else {
-
-
-    //         return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
-    //     }
-
-    
-    //     // return view('components/user/section/user-dashboard',compact('data','plateNo','data3','data2','reqParticular'));
-    // }
 
 
 
