@@ -53,7 +53,7 @@ class AdminForApprovalController extends Controller
             $reqParticular->is_approved = 2;
             $reqParticular->save();
         }
-        
+
         return redirect('/admin/for-approval');
     }
     
