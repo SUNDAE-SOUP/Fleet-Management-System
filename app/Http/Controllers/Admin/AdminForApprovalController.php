@@ -18,7 +18,7 @@ class AdminForApprovalController extends Controller
 
         $reqParticular = RequestParticular::where('is_approved', 0)->get();
 
-        $data = Vehicle::where('id', $userId)->get();//get the column values in vehicles table
+        $data = Vehicle::where('id', $userId)->get();   //get the column values in vehicles table
 
         $firstVehicle = $data->first(); // Access the first model in the collection
         $plateNo = $firstVehicle->model_id; // Store the value of the 'plate_no' column in the $plateNo variable
