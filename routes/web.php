@@ -40,6 +40,10 @@ Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(
     Route::get('/admin/view','index')->name('admin.view');
     
 });
+Route::middleware(['auth'])->controller(AdminForApprovalController::class)->group(function () {
+    Route::get('/admin/for-approval', "index");
+    Route::post('/admin/approved', "approve");
+});
 
 
 
@@ -47,9 +51,7 @@ Route::middleware(['auth'])->controller(AdminDashboardController::class)->group(
     Route::get('/admin/dashboard', "index");
 });
 
-Route::middleware(['auth'])->controller(AdminForApprovalController::class)->group(function () {
-    Route::get('/admin/for-approval', "index");
-});
+
 
 Route::middleware(['auth'])->controller(AdminHistoryController::class)->group(function () {
     Route::get('/admin/history', "index");

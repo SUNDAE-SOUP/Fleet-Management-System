@@ -59,6 +59,8 @@ class UserSendRequestController extends Controller
         $reqHistory->{'3rd_request_category_id'} = $request->input('3rdCategory');
         $reqHistory->{'4th_request_category_id'} = $request->input('4thCategory');
         $reqHistory->quotation_amount = $request->input('quotation');
+        $reqHistory->is_approved=0;
+
         
         $reqHistory->save();
 

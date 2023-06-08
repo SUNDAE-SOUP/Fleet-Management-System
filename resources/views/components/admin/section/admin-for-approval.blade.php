@@ -47,9 +47,14 @@
                 </div>
                 <div class="approvalResponse">
                     <div class="forApprovalHeaderData">Response</div>
-                    <button class="approved">
-                        <i class="fa-solid fa-thumbs-up"></i>
-                    </button>
+                    <form method="POST" action="{{ ('/admin/approved') }}">
+                     @csrf
+                        <button class="approved">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </button>
+
+                    </form>
+
                     <button class="disapproved">
                         <i class="fa-solid fa-thumbs-down"></i>
                     </button>
