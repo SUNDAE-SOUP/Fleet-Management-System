@@ -1,7 +1,6 @@
 <x-user.user-header />
     <x-user.user-sidebar />
     <section id="userDashboardSection">
-        this is USER DASHBOARD {{auth()->user()->name}}
         <h1>Your Company Car Details</h1>
         <div class="carDetails">
             @foreach ($data as $data)
@@ -49,7 +48,7 @@
             <div class="label">M.O.T.</div>
             <div> {{App\Models\Mode_Of_Payment::find($data->mode_of_transaction_id)->name }}</div>
         </div>
-        <!-- <div class="progressBarHeader">PROGRESS BAR</div>
+        <div class="progressBarHeader">PROGRESS BAR</div>
         <div class="progress" role="progressbar" aria-label="Default striped example" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar progress-bar-striped" style="width: 33%"></div>
         </div>
@@ -58,7 +57,7 @@
             <div>Evaluation</div>
             <div>Approval</div>
             <div>PO issuance</div>
-        </div> -->
+        </div>
     </div>
 @endforeach
         </div>

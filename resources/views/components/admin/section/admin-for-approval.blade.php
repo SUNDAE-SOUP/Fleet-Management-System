@@ -8,7 +8,7 @@
         </div>
         
         <div class="forApprovalContainer">
-        this is ADMIN DASHBOARD {{auth()->user()->name}}
+       
             <div class="forApprovalHeader">
                 <div>Req ID</div>
                 <div>Name</div>
